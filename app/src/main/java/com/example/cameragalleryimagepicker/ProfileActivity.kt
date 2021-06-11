@@ -211,7 +211,7 @@ class ProfileActivity : AppCompatActivity() {
                 pathToFile = photoFile.absolutePath
                 val photoUri = FileProvider.getUriForFile(
                     this,
-                    "com.example.notificationapplication.fileprovider",
+                    "com.example.cameragalleryimagepicker.fileprovider",
                     photoFile
                 )
                 Log.d("uri", "PhotoUri is $photoUri")
