@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidetop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidebottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#075E54"
+        app:layout_constraintBottom_toTopOf="@id/guidetop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Profile"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintEnd_toEndOf="@id/view"
+        app:layout_constraintStart_toStartOf="@id/view"
+        app:layout_constraintTop_toTopOf="@id/view" />
+
+    <ImageView
+        android:id="@+id/imagepic"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/default_profile_pic"
+        app:layout_constraintBottom_toTopOf="@id/guidemiddle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidemiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="250dp" />
+
+    <LinearLayout
+        android:id="@+id/linearname"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideend"
+        app:layout_constraintStart_toStartOf="@id/guidestart"
+        app:layout_constraintTop_toBottomOf="@id/guidemiddle">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_person_24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:focusable="false"
+            android:textColorHint="@color/black"
+            android:theme="@style/myTextInputLabel"
+            app:boxBackgroundMode="none"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guideend"
+            app:layout_constraintStart_toStartOf="@id/guidestart"
+            app:layout_constraintTop_toBottomOf="@id/guidemiddle">
+
+            <EditText
+                android:id="@+id/profilename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@null"
+                android:hint="Name"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearabout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideend"
+        app:layout_constraintStart_toStartOf="@id/guidestart"
+        app:layout_constraintTop_toBottomOf="@id/linearname">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:rotation="180"
+            android:src="@drawable/ic_round_error_outline_24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:focusable="false"
+            android:textColorHint="@color/black"
+            android:theme="@style/myTextInputLabel"
+            app:boxBackgroundMode="none"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guideend"
+            app:layout_constraintStart_toStartOf="@id/guidestart"
+            app:layout_constraintTop_toBottomOf="@id/linearname">
+
+            <EditText
+                android:id="@+id/profileabouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@null"
+                android:hint="About"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guideend"
+        app:layout_constraintStart_toStartOf="@id/guidestart"
+        app:layout_constraintTop_toBottomOf="@id/linearabout">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_phone_24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:focusable="false"
+            android:textColorHint="@color/black"
+            android:theme="@style/myTextInputLabel"
+            app:boxBackgroundMode="none"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/guideend"
+            app:layout_constraintStart_toStartOf="@id/guidestart"
+            app:layout_constraintTop_toBottomOf="@id/linearname">
+
+            <EditText
+                android:id="@+id/profilephonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@null"
+                android:hint="Phone"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textSize="12sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidemiddleend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <ImageView
+        android:id="@+id/profilepic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:padding="13dp"
+        android:src="@drawable/ic_baseline_camera_alt_24"
+        app:layout_constraintBottom_toBottomOf="@id/guidemiddle"
+        app:layout_constraintStart_toStartOf="@id/guidemiddleend" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
